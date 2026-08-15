@@ -1,0 +1,90 @@
+/* Responsive overrides for mobile
+   Use !important to override inline styles where necessary. */
+
+/* Global adjustments for small screens */
+@media (max-width: 768px) {
+  /* Hero: stack columns */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .hero-preview {
+    order: 2;
+    width: 100% !important;
+  }
+
+  /* Comparison section: stack copy and mockup */
+  .comparison-inner {
+    display: block !important;
+  }
+
+  .comparison-inner > .copyBlock,
+  .comparison-inner > .comparison-mockup {
+    width: 100% !important;
+    margin-bottom: 18px;
+  }
+
+  .comparison-mockup {
+    border-radius: 14px !important;
+    overflow: auto;
+  }
+
+  /* Table rows: make them wrap so content doesn't overflow */
+  .comparison-mockup .tableHeader,
+  .comparison-mockup .tableRow {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Navbar: collapse nav links into a single row that can wrap */
+  .site-header-inner {
+    flex-wrap: wrap !important;
+    padding: 12px 16px !important;
+  }
+
+  .site-nav {
+    order: 3;
+    width: 100%;
+    display: flex !important;
+    gap: 10px !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    margin-top: 8px !important;
+  }
+
+  .site-cta {
+    order: 2;
+    margin-left: auto !important;
+  }
+
+  /* Final CTA: stack elements vertically */
+  .final-cta-card {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+  }
+
+  .final-cta-card a {
+    align-self: stretch !important;
+    text-align: center !important;
+  }
+
+  /* Reduce paddings for small screens */
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Minor tablet tweaks */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr 0.9fr !important;
+  }
+
+  .comparison-inner {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}

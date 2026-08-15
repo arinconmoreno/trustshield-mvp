@@ -5,7 +5,7 @@ import { trackEvent } from "../utils/analytics";
 export default function Hero() {
   return (
     <section id="inicio" style={styles.section}>
-      <div style={styles.grid}>
+      <div style={styles.grid} className="hero-grid">
         <div>
           <span style={styles.kicker}>Cumplimiento para licitaciones y auditorías</span>
           <h1 style={styles.title}>Gana licitaciones y supera auditorías en horas, no semanas</h1>
@@ -38,7 +38,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div style={styles.previewCard}>
+        <div style={styles.previewCard} className="hero-preview">
           <div style={styles.previewTop}>
             <div style={styles.dot} />
             <div style={styles.dot} />
