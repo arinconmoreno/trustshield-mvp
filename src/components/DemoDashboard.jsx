@@ -138,7 +138,7 @@ function Sidebar({ active, onNavigate }) {
     { id: "report", label: "Reporte SECOP II", icon: FileText },
   ];
   return (
-    <div style={{
+    <div className="demo-sidebar" style={{
       width: 260, minHeight: "100vh", background: colors.bgSidebar,
       borderRight: `1px solid ${colors.border}`, display: "flex", flexDirection: "column",
       padding: "0", position: "fixed", left: 0, top: 0, zIndex: 10,
@@ -263,7 +263,7 @@ function OnboardingScreen() {
         subtitle="El agente analiza el perfil de la organización y determina automáticamente los marcos normativos aplicables y los conectores necesarios."
       />
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 24 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 24 }} className="two-grid">
         <Card>
           <div style={{ color: colors.textDim, fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 14 }}>Perfil Organizacional</div>
           {[
@@ -352,7 +352,7 @@ function MatrixScreen() {
         subtitle="Vista unificada ISO 27001 × SAGRILAFT/Capítulo IX — El diferenciador que las plataformas globales no ofrecen para el mercado colombiano."
       />
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 12, marginBottom: 24 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 12, marginBottom: 24 }} className="four-grid">
         <MetricCard label="Controles mapeados" value="12" sub="ISO 27001 Anexo A" />
         <MetricCard label="Banda Verde" value={greens} sub="Evidencia automatizada" color={colors.green} />
         <MetricCard label="Banda Amarilla" value={yellows} sub="Validación humana" color={colors.amber} />
@@ -360,9 +360,9 @@ function MatrixScreen() {
       </div>
 
       <Card style={{ padding: 0, overflow: "hidden" }}>
-        <div style={{
-          display: "grid", gridTemplateColumns: "70px 1fr 1fr 90px 90px 60px",
-          padding: "12px 16px", background: colors.bgSidebar,
+          <div className="matrix-header" style={{
+            display: "grid", gridTemplateColumns: "70px 1fr 1fr 90px 90px 60px",
+            padding: "12px 16px", background: colors.bgSidebar,
           borderBottom: `1px solid ${colors.border}`,
           fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: colors.textDim,
         }}>
@@ -377,6 +377,7 @@ function MatrixScreen() {
         {CONTROLS_MATRIX.map((row) => (
           <div key={row.id}>
             <div
+              className="matrix-row"
               onClick={() => setExpanded(expanded === row.id ? null : row.id)}
               style={{
                 display: "grid", gridTemplateColumns: "70px 1fr 1fr 90px 90px 60px",
@@ -455,7 +456,7 @@ function AgentScreen() {
         </Badge>
       </PageHeader>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: 16 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: 16 }} className="two-col-main">
         <Card style={{ padding: 0, maxHeight: 620, overflowY: "auto" }}>
           {AGENT_TIMELINE.slice(0, visibleCount).map((entry, i) => (
             <div key={i} style={{
@@ -592,7 +593,7 @@ function ReportScreen() {
         </div>
       </Card>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 20 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 20 }} className="two-grid">
         <Card>
           <div style={{ color: colors.textDim, fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 14 }}>
             Resumen Ejecutivo para Comité de Licitaciones
@@ -672,7 +673,7 @@ function ReportScreen() {
             display: "grid", gridTemplateColumns: "80px 1fr 80px 80px 180px",
             alignItems: "center", padding: "12px 0",
             borderBottom: i < 2 ? `1px solid ${colors.border}` : "none",
-          }}>
+          }} className="remediation-row">
             <span style={{ color: colors.cyan, fontSize: 12, fontFamily: "monospace", fontWeight: 600 }}>{item.control}</span>
             <span style={{ color: colors.text, fontSize: 12.5 }}>{item.action}</span>
             <Badge color={colors.red} bg={colors.redGlow}>{item.urgency}</Badge>
@@ -698,7 +699,7 @@ export default function DemoDashboard() {
   const ActiveScreen = screens[screen];
 
   return (
-    <div style={{
+    <div className="demo-root" style={{
       fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
       background: colors.bg, minHeight: "100vh", color: colors.text,
     }}>
@@ -711,8 +712,8 @@ export default function DemoDashboard() {
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
       `}</style>
       <Sidebar active={screen} onNavigate={setScreen} />
-      <div style={{ marginLeft: 260, minHeight: "100vh" }}>
-        <header style={{
+      <div className="demo-main" style={{ marginLeft: 260, minHeight: "100vh" }}>
+        <header className="demo-header" style={{
           position: "sticky",
           top: 0,
           zIndex: 20,
@@ -781,7 +782,7 @@ export default function DemoDashboard() {
           </div>
         </header>
 
-        <div style={{ padding: "28px 32px" }}>
+        <div className="demo-content" style={{ padding: "28px 32px" }}>
           <ActiveScreen />
         </div>
       </div>
