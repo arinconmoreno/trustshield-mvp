@@ -13,13 +13,13 @@ export default function LandingPage() {
       <ProblemSection />
       <HowItWorks />
       <section style={styles.comparisonSection}>
-        <div style={styles.comparisonInner}>
+        <div style={styles.comparisonInner} className="comparison-inner">
           <div style={styles.copyBlock}>
             <span style={styles.kicker}>Una sola vista para ISO 27001 y SAGRILAFT</span>
             <h2 style={styles.title}>Mientras otras herramientas muestran controles aislados, TrustShield cruza ambos marcos normativos para identificar brechas, prioridades y evidencias reutilizables.</h2>
           </div>
 
-          <div style={styles.mockupCard}>
+          <div style={styles.mockupCard} className="comparison-mockup">
             <div style={styles.mockupHeader}>
               <div style={styles.pillRow}>
                 <span style={styles.pill} />

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <header style={styles.header}>
-      <div style={styles.inner}>
+    <header style={styles.header} className="site-header">
+      <div style={styles.inner} className="site-header-inner">
         <Link to="/" style={styles.brand} aria-label="TrustShield inicio">
           <div style={styles.brandBadge}>
             <ShieldCheck size={18} color="#fff" />
@@ -15,14 +15,14 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <nav style={styles.nav} aria-label="Navegación principal">
+        <nav style={styles.nav} aria-label="Navegación principal" className="site-nav">
           <a href="#inicio" style={styles.navLink}>Inicio</a>
           <a href="#como-funciona" style={styles.navLink}>Cómo funciona</a>
           <Link to="/demo" style={styles.navLink}>Demo</Link>
           <a href="#cta-final" style={styles.navLink}>Agendar diagnóstico</a>
         </nav>
 
-        <Link to="/#cta-final" style={styles.ctaButton}>
+        <Link to="/#cta-final" style={styles.ctaButton} className="site-cta">
           Agenda un diagnóstico
           <ArrowRight size={16} />
         </Link>

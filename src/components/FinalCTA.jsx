@@ -4,7 +4,7 @@ import { trackEvent } from "../utils/analytics";
 export default function FinalCTA() {
   return (
     <section id="cta-final" style={styles.section}>
-      <div style={styles.card}>
+      <div style={styles.card} className="final-cta-card">
         <div>
           <span style={styles.kicker}>Agenda tu diagnóstico</span>
           <h2 style={styles.title}>Descubre qué le falta a tu empresa para competir por su próximo contrato</h2>
