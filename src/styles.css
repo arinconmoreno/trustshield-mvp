@@ -88,3 +88,65 @@
     grid-template-columns: 1fr 1fr !important;
   }
 }
+
+/* Demo dashboard responsive adjustments */
+@media (max-width: 900px) {
+  .demo-sidebar {
+    display: none !important;
+  }
+
+  .demo-main {
+    margin-left: 0 !important;
+  }
+
+  .demo-header {
+    padding: 10px 14px !important;
+  }
+
+  .demo-content {
+    padding: 16px !important;
+  }
+
+  .two-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .four-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .matrix-header,
+  .matrix-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .two-col-main {
+    grid-template-columns: 1fr !important;
+  }
+
+  .remediation-row {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    display: grid !important;
+  }
+
+  /* Cards and paddings */
+  .demo-content .Card,
+  .demo-content .card {
+    padding: 12px !important;
+  }
+}
+
+/* Small devices: stack main landing grids */
+@media (max-width: 480px) {
+  .how-grid, .problem-grid, .results-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .comparison-mockup .table-header,
+  .comparison-mockup .table-row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}

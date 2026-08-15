@@ -6,13 +6,13 @@ const metrics = [
 
 export default function ResultsSection() {
   return (
-    <section style={styles.section}>
+    <section style={styles.section} className="results-section">
       <div style={styles.headerWrap}>
         <span style={styles.kicker}>Resultados</span>
         <h2 style={styles.title}>Cumplir más rápido, sin perder oportunidades</h2>
       </div>
 
-      <div style={styles.grid}>
+      <div style={styles.grid} className="results-grid">
         {metrics.map((metric, index) => (
           <article key={metric} style={styles.card}>
             <div style={styles.counter}>0{index + 1}</div>

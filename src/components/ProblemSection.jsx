@@ -15,13 +15,13 @@ const problems = [
 
 export default function ProblemSection() {
   return (
-    <section id="problema" style={styles.section}>
+    <section id="problema" style={styles.section} className="problem-section">
       <div style={styles.headerWrap}>
         <span style={styles.kicker}>El problema</span>
         <h2 style={styles.title}>El cumplimiento no debería retrasar oportunidades de negocio</h2>
       </div>
 
-      <div style={styles.grid}>
+      <div style={styles.grid} className="problem-grid">
         {problems.map((problem) => (
           <article key={problem.title} style={styles.card}>
             <div style={styles.badge}>⚠</div>

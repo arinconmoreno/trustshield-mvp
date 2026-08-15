@@ -20,13 +20,13 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="como-funciona" style={styles.section}>
+    <section id="como-funciona" style={styles.section} className="how-section">
       <div style={styles.headerWrap}>
         <span style={styles.kicker}>Cómo funciona</span>
         <h2 style={styles.title}>Tres pasos para salir más rápido de la complejidad normativa</h2>
       </div>
 
-      <div style={styles.grid}>
+      <div style={styles.grid} className="how-grid">
         {steps.map((step, index) => {
           const Icon = step.icon;
           return (
